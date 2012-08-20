@@ -20,7 +20,7 @@ class TestSuite implements ITest {
 	}
 
 	public List<ITestResult> test() {
-		ArrayList<TestResult> resultLst = new ArrayList<TestResult>();
+		ArrayList<ITestResult> resultLst = new ArrayList<ITestResult>();
 		for (ITest t : testSuite) {
 			List<ITestResult> result = t.test();
 			resultLst.addAll(result);

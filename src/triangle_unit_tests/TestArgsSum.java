@@ -6,6 +6,8 @@ import java.util.List;
 
 public class TestArgsSum implements ITest {
 	private String name = this.getClass().getName();
+	boolean passed = false;
+    String message = "";
 
 	private String[] args = new String[3];
 
@@ -28,16 +30,19 @@ public class TestArgsSum implements ITest {
 	}
 
 	public List<ITestResult> test() {
-		List<ITestResult> result = new ArrayList();
-	    boolean passed = false;
-        String message = "";
+		List<ITestResult> result = new ArrayList<ITestResult>();
+	    
 		double a = Double.parseDouble(args[0]);
 		double b = Double.parseDouble(args[1]);
 		double c = Double.parseDouble(args[2]);
 
-		isPossible = (a - b < c && c - a < b && b - a < c);
-		if()
-		ITestResult res = new TestResult(passed, name, message);
+		boolean isPossible = (a - b < c && c - a < b && b - a < c);
+		passed = (isPossible == CheckTriangle.check(args));
+		message = this.getName() + Arrays.toString(args) + 
+				"." + (passed ? " passed." : " failed");
+		
+		
+		ITestResult res = new TestResult(name, passed, message);
 //		result[0] = this.getName()
 //				+ Arrays.toString(args)
 //				+ "."
