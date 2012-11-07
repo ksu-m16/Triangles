@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import checker.CheckTriangle;
+
 public class TestArgsSum implements ITest {
 	private String name = this.getClass().getName();
 	boolean passed = false;
@@ -39,7 +41,7 @@ public class TestArgsSum implements ITest {
 		boolean isPossible = (a - b < c && c - a < b && b - a < c);
 		passed = (isPossible == CheckTriangle.check(args));
 		message = this.getName() + Arrays.toString(args) + 
-				"." + (passed ? " passed." : " failed");
+				"." + (passed ? "passed." : "failed.");
 		
 		
 		ITestResult res = new TestResult(name, passed, message);
