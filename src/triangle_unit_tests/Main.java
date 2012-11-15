@@ -14,6 +14,7 @@ public class Main {
 		int i2 = 2;
 		TestSuite ts = new TestSuite("General Testsuite");
 		TestSuite ts2 = new TestSuite("Test Args Count");
+		TestSuite ts3 = new TestSuite("Test Arguments Verification");
 		ts1.add(new TestArgsSum("3", "4", "3"));
 		ts1.add(new TestArgsSum("1", "1", "1"));
 		ts1.add(new TestArgsSum("1", "3", "2"));
@@ -25,8 +26,13 @@ public class Main {
 		ts2.add(new TestArgCount(0));
 		ts2.add(new TestArgCount(100500));
 		
+		ts3.add(new ArgsVerification(new String[] {"1", "2", "3"}));
+		ts3.add(new ArgsVerification(new String[] {"1a", "2", "3"}));
+		ts3.add(new ArgsVerification(new String[] {"1", "2.2", "3"}));
+		
 		ts.add(ts1);
 		ts.add(ts2);
+		ts.add(ts3);
 		
 		List<ITestResult> results = ts.test();
 
