@@ -3,9 +3,13 @@ package triangle_unit_tests;
 import java.util.*;
 
 public class Main {
+	
+	//thats my awesome branch but it doesnt work =(
 
 	public static void main(String[] args) {
 		TestSuite ts1 = new TestSuite("Func. Tests");
+		int i = 0;
+		int i2 = 2;
 		TestSuite ts = new TestSuite("General Testsuite");
 		TestSuite ts2 = new TestSuite("Test Args Count");
 		ts1.add(new TestArgsSum("3", "4", "3"));
