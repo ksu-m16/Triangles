@@ -1,6 +1,7 @@
 package checker;
 
 /// change
+//  change
 
 public class CheckTriangle {
 	public static boolean check(String[] args) throws IllegalArgumentException {
