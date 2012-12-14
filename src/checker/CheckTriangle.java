@@ -1,5 +1,7 @@
 package checker;
 
+/// change
+
 public class CheckTriangle {
 	public static boolean check(String[] args) throws IllegalArgumentException {
 		int a = Integer.parseInt(args[0]);
